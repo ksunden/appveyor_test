@@ -54,12 +54,12 @@ install:
   - activate test-environment
   # pull pywin32 from conda because on py38 there is something wrong with finding
   # the dlls when installed from pip
-  - conda install -c conda-forge pywin32
   # install pyqt from conda-forge
   #- conda install -c conda-forge pyqt
   - echo %PYTHON_VERSION% %TARGET_ARCH%
   # Install dependencies from PyPI.
   - pip install pywin32
+  - conda install -c conda-forge pywin32
   # Install optional dependencies from PyPI.
   # Sphinx is needed to run sphinxext tests
   # Show the installed packages + versions
