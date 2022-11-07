@@ -59,6 +59,7 @@ install:
   #- conda install -c conda-forge pyqt
   - echo %PYTHON_VERSION% %TARGET_ARCH%
   # Install dependencies from PyPI.
+  - pip install pywin32
   # Install optional dependencies from PyPI.
   # Sphinx is needed to run sphinxext tests
   # Show the installed packages + versions
