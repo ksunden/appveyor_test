@@ -24,11 +24,9 @@ environment:
     - PYTHON_VERSION: "3.8"
       CONDA_INSTALL_LOCN: "C:\\Miniconda3-x64"
       TEST_ALL: "no"
-      EXTRAREQS: "-r requirements/testing/extra.txt"
     - PYTHON_VERSION: "3.9"
       CONDA_INSTALL_LOCN: "C:\\Miniconda3-x64"
       TEST_ALL: "no"
-      EXTRAREQS: "-r requirements/testing/extra.txt"
 
 # We always use a 64-bit machine, but can build x86 distributions
 # with the PYTHON_ARCH variable
@@ -58,13 +56,11 @@ install:
   # the dlls when installed from pip
   - conda install -c conda-forge pywin32
   # install pyqt from conda-forge
-  - conda install -c conda-forge pyqt
+  #- conda install -c conda-forge pyqt
   - echo %PYTHON_VERSION% %TARGET_ARCH%
   # Install dependencies from PyPI.
-  - python -m pip install --upgrade -r requirements/testing/all.txt %EXTRAREQS% %PINNEDVERS%
   # Install optional dependencies from PyPI.
   # Sphinx is needed to run sphinxext tests
-  - python -m pip install --upgrade sphinx
   # Show the installed packages + versions
   - conda list
 
